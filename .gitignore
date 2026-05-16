@@ -3,3 +3,8 @@ dist
 .env
 .DS_Store
 npm-debug.log*
+
+# Vite log files
+vite-dev.log
+vite-dev.err.log
+*.log
