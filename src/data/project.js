@@ -1,86 +1,59 @@
 export const projects = [
     {
         number: '01',
-        title: 'RESTAURANT MANAGEMENT SYSTEM API',
-        category: 'Transactional Backend Platform',
-        period: 'Jan2026 - Present',
+        title: 'RESTAURANT MANAGEMENT SYSTEM - BACKEND',
+        category: 'Management API & Transactional Workflows',
+        period: 'Jan 2026 - Present',
         overview:
-            'Enterprise-style backend platform for restaurant operations focused on transactional workflows, authentication systems, inventory synchronization, and operational consistency.',
-
+            'An enterprise-grade backend platform designed to power comprehensive restaurant operations, orchestrating multi-role synchronization across admin, kitchen, waiter, cashier, and warehouse systems.',
         engineering: [
-            'JWT authentication & RBAC',
-            'Order lifecycle management',
-            'Inventory synchronization',
-            'RESTful API architecture',
-            'Transaction consistency handling',
+            'JWT authentication & centralized RBAC for 5+ distinct operational roles',
+            'Asynchronous order lifecycle tracking (Waiter to Kitchen state flow)',
+            'Real-time warehouse inventory synchronization and mutation safety',
+            'Secure table booking and payment validation engines',
+            'Transaction consistency handling to prevent duplicate checkout states',
         ],
-
         challenges: [
-            'Managing concurrent order updates',
-            'Preventing inconsistent inventory mutations',
-            'Designing scalable authorization workflows',
+            'Managing concurrent order updates from multiple waiter interfaces simultaneously',
+            'Preventing inconsistent inventory mutations between real-time sales and warehouse stock',
+            'Designing a reliable state-machine for order tracking from cooking to payment settlement',
         ],
-
         architecture: [
-            'Layered Spring Boot architecture',
-            'DTO validation flow',
-            'MySQL relational schema',
-            'Service-repository pattern',
+            'Layered Spring Boot architecture with robust separation of concerns',
+            'DTO validation flow and clean exception handling mapping',
+            'PostgreSQL relational schema optimized with proper indexing for transaction logs', // Gua ganti ke Postgres biar konsisten dengan tags lo kemarin
+            'Service-Repository design pattern for high code maintainability',
         ],
-
-        tags: [
-            'Spring Boot',
-            'MySQL',
-            'JWT',
-            'REST API',
-            'JPA',
-            'RBAC',
-        ],
-
-        result:
-            'Designed scalable backend foundations for multi-role restaurant operations.',
+        tags: ['Spring Boot', 'PostgreSQL', 'JWT', 'REST API', 'JPA', 'RBAC'],
+        result: 'Successfully engineered a high-throughput, thread-safe backend foundation capable of managing end-to-end restaurant ecosystem transactions.',
+        Git: 'https://github.com/andhykakurniawan/restaurant-management-system-backend'
     },
     {
         number: '02',
-
-        title: 'RESTAURANT MANAGEMENT DASHBOARD',
-
-        category: 'Operational Web Interface',
-
+        title: 'RESTAURANT MANAGEMENT SYSTEM - FRONTEND',
+        category: 'Management Dashboard & Operational Interfaces',
         period: 'Jan 2026 - Present',
-
         overview:
-            'Responsive operational dashboard interface for restaurant management workflows including order monitoring, transaction handling, and administrative operations.',
-
+            'A high-fidelity operational frontend featuring dedicated, role-specific interfaces for admin monitoring, kitchen screens, waiter ordering, cashier payments, and customer self-service booking workflows.',
         engineering: [
-            'Dashboard UI architecture',
-            'REST API integration',
-            'Responsive operational layouts',
-            'Role-based interface rendering',
+            'Multi-interface UI architecture (Admin Dashboard, Kitchen Display, Customer Booking)',
+            'State synchronization for real-time order status updates across operational roles',
+            'Dynamic form handling and validation for complex table booking and payment flows',
+            'Role-based layout rendering based on reactive security tokens',
         ],
-
         challenges: [
-            'Designing scalable dashboard layouts',
-            'Managing frontend state synchronization',
-            'Creating operationally efficient UI flows',
+            'Designing complex, highly scalable layouts tailored to different device environments (e.g., tablet for waiters, desktop for cashiers)',
+            'Managing frontend state synchronization so the kitchen screen updates instantly when a waiter inputs an order',
+            'Creating frictionless, high-speed UI interaction flows for fast-paced operational environments',
         ],
-
         architecture: [
-            'React component architecture',
-            'API-driven frontend workflow',
-            'Responsive dashboard system',
+            'React component architecture with a modular and reusable design pattern',
+            'Context-driven frontend workflow for role permission and secure state handling',
+            'Responsive utilities backed by Tailwind CSS for seamless device adaptability',
         ],
-
-        tags: [
-            'React',
-            'JavaScript',
-            'CSS',
-            'REST API',
-            'Responsive UI',
-        ],
-
-        result:
-            'Built operational interfaces optimized for restaurant administrative workflows.',
+        tags: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'REST API', 'Responsive UI'],
+        result: 'Delivered a fluid, responsive, and operationally efficient multi-role workspace optimized for high-speed restaurant administration.',
+        Git: 'https://github.com/andhykakurniawan/restaurant-management-system-frontend'
     },
     {
         number: '03',
