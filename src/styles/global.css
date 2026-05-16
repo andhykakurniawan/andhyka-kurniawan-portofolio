@@ -199,8 +199,7 @@ button {
   gap: 24px;
 }
 
-.nav__brand,
-.footer__brand {
+.nav__brand {
   font-family: var(--font-display);
   font-size: 1.375rem;
   font-weight: 700;
@@ -365,8 +364,6 @@ button {
 }
 
 .profile-card,
-.info-panel,
-.skill-card,
 .project-row,
 .timeline__card,
 .contact-form {
@@ -384,8 +381,6 @@ button {
 }
 
 .profile-card:hover,
-.info-panel:hover,
-.skill-card:hover,
 .project-row:hover,
 .timeline__card:hover {
   border-color: var(--border-glow);
@@ -461,24 +456,9 @@ button {
   text-transform: uppercase;
 }
 
-.about__inner,
-.contact__inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 64px;
-  align-items: start;
-}
-
-.about__copy p,
 .project-row p,
-.timeline__card p,
-.contact__lead {
+.timeline__card p {
   color: var(--text-muted);
-}
-
-.about__copy strong {
-  color: var(--accent-vivid);
-  font-weight: 500;
 }
 
 .about-stats-row {
@@ -654,35 +634,9 @@ button {
   }
 }
 
-.info-panel,
 .contact-form {
   padding: 28px;
   border-radius: var(--radius-card);
-}
-
-.info-panel__title {
-  margin: 0 0 18px;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-}
-
-.info-panel__item {
-  padding: 18px 0;
-  border-top: 1px solid var(--border);
-}
-
-.info-panel__item h3 {
-  margin: 0 0 7px;
-  font-size: 0.9rem;
-}
-
-.info-panel__item p {
-  margin: 2px 0;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  line-height: 1.55;
 }
 
 .skills-grid {
@@ -733,36 +687,13 @@ button {
   border-radius: 6px;
 }
 
-.skill-card:hover {
-  transform: translateY(-2px);
-}
-
-.skill-card--gold {
-  border-color: rgba(246, 173, 85, 0.32);
-  box-shadow: 0 0 38px rgba(246, 173, 85, 0.08);
-}
-
-.skill-card__head,
 .timeline__title-row,
 .project-row__title,
-.skill-bar__meta,
 .footer__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-}
-
-.skill-card__icon {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
 }
 
 .rare-badge {
@@ -775,53 +706,10 @@ button {
   letter-spacing: 0.06em;
 }
 
-.skill-card h3 {
-  margin: 22px 0 10px;
-  font-size: 1.125rem;
-}
-
-.skill-card__caption {
-  margin: 0 0 18px;
-  color: var(--gold);
-  font-size: 0.8rem;
-}
-
 .tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-
-.skill-bars {
-  display: grid;
-  gap: 18px;
-  margin-top: 40px;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  background: rgba(13, 20, 34, 0.48);
-}
-
-.skill-bar__meta {
-  margin-bottom: 8px;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-}
-
-.skill-bar__track {
-  height: 8px;
-  overflow: hidden;
-  border-radius: var(--radius-pill);
-  background: rgba(74, 85, 104, 0.22);
-}
-
-.skill-bar__track span {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent-muted), var(--accent-vivid));
-  transition: width 0.8s ease-out;
 }
 
 .project-list {
@@ -1146,32 +1034,6 @@ button {
   font-size: 0.875rem;
 }
 
-.contact__lead {
-  max-width: 440px;
-  margin: 0 0 28px;
-}
-
-.contact-links {
-  display: grid;
-  gap: 12px;
-}
-
-.contact-links a,
-.contact-links span {
-  color: var(--text-muted);
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.contact-links a::after {
-  content: ' ->';
-  color: var(--accent);
-}
-
-.contact-links a:hover {
-  color: var(--accent-vivid);
-  transform: translateX(4px);
-}
-
 .contact-form {
   display: grid;
   gap: 16px;
@@ -1210,15 +1072,6 @@ button {
   gap: 5rem;
   margin-top: 3rem;
   align-items: start;
-}
-
-.contact-subtitle {
-  font-family: "Clash Display", sans-serif;
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  margin-bottom: 1rem;
-  line-height: 1.3;
 }
 
 .contact-description {
@@ -1344,188 +1197,106 @@ button {
   }
 }
 
+/* --- NAVBAR FIXES --- */
+.nav-shell {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* Aktif saat user melakukan scroll kebawah */
+.nav-shell.is-scrolled {
+  background: rgba(7, 11, 18, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.25rem 0;
+}
+
+.nav__brand {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #63B3ED; /* Biru elektrik kebanggaan */
+}
+/* --- NEW ULTRA-MINIMALIST FOOTER --- */
 .footer {
-  position: relative;
-  z-index: 1;
-  padding: 28px 0;
-  border-top: 1px solid var(--border);
-  background: var(--bg-base);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  background: transparent; /* Biar menyatu sama background gradasi utama web lo */
+  margin-top: 8rem; /* Jarak aman dari section contact */
 }
 
-.footer p {
-  margin: 0;
-  color: var(--text-muted);
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Kelompok Kiri */
+.footer__left {
+  display: flex;
+  gap: 1.5rem; /* Memberikan jarak horizontal antara copyright dan credits */
   font-size: 0.8rem;
+  color: #475569; /* Warna gelap muted agar gak dominan */
 }
 
-@media (max-width: 1024px) {
-  .hero__inner,
-  .about__inner,
-  .contact__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero__title {
-    max-width: 760px;
-  }
-
-  .profile-card {
-    max-width: 420px;
-  }
-
-  .timeline::before {
-    left: 6px;
-  }
-
-  .timeline__entry,
-  .timeline__entry.is-right {
-    width: auto;
-    margin-left: 40px;
-  }
-
-  .timeline__entry.is-left .timeline__dot,
-  .timeline__entry.is-right .timeline__dot {
-    left: -40px;
-    right: auto;
-  }
+.footer__left p {
+  margin: 0;
 }
 
-@media (max-width: 760px) {
-  .container {
-    width: min(100% - 32px, var(--page));
-  }
+.footer__credits {
+  font-family: "JetBrains Mono", monospace;
+}
 
-  .section {
-    padding: 72px 0;
-  }
+.footer__credits a {
+  color: #63B3ED; /* Tetap kasih aksen biru elektrik tipis di link GitHub */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
 
-  .hero-canvas,
-  .cursor {
-    display: none;
-  }
+.footer__credits a:hover {
+  color: #90cdf4;
+}
 
-  .nav {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-  }
+/* Kelompok Kanan (Menu Navigasi) */
+.footer__links {
+  display: flex;
+  gap: 2rem;
+}
 
-  .nav__toggle {
-    display: inline-grid;
-    gap: 6px;
-    padding: 10px;
-    border: 1px solid var(--border);
-    background: rgba(13, 20, 34, 0.72);
-  }
+.footer__links a {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
 
-  .nav__toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--accent);
-    transition: transform 0.2s ease;
-  }
+.footer__links a:hover {
+  color: #63B3ED;
+}
 
-  .nav__toggle.is-open span:first-child {
-    transform: translateY(4px) rotate(45deg);
-  }
-
-  .nav__toggle.is-open span:last-child {
-    transform: translateY(-4px) rotate(-45deg);
-  }
-
-  .nav__links {
-    position: fixed;
-    top: 64px;
-    right: 16px;
-    left: 16px;
-    display: grid;
-    justify-content: stretch;
-    padding: 18px;
-    border: 1px solid var(--border);
-    background: rgba(7, 11, 18, 0.96);
-    transform: translateY(-12px);
-    opacity: 0;
-    pointer-events: none;
-    backdrop-filter: blur(18px);
-  }
-
-  .nav__links.is-open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav__links a {
-    padding: 10px 0;
-  }
-
-  .nav__cta {
-    display: none;
-  }
-
-  .hero__inner {
-    gap: 38px;
-  }
-
-  .availability {
-    width: fit-content;
-    max-width: 100%;
-    white-space: normal;
-  }
-
-  .hero__title {
-    font-size: clamp(2.55rem, 13vw, 4rem);
-  }
-
-  .hero__title .accent {
-    font-size: clamp(1.25rem, 6vw, 1.75rem);
-  }
-
-  .hero__actions .btn {
-    width: 100%;
-  }
-
-  .skill-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-row {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 22px;
-  }
-
-  .project-modal {
-    align-items: end;
-    padding: 12px;
-  }
-
-  .project-modal__panel {
-    max-height: 90vh;
-    padding: 24px 18px;
-  }
-
-  .project-modal__header {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding-right: 44px;
-  }
-
-  .project-modal__grid {
-    grid-template-columns: 1fr;
-  }
-
+/* Responsivitas: Otomatis vertikal kalau di layar HP */
+@media (max-width: 768px) {
   .footer__inner {
-    display: grid;
-    justify-items: start;
+    flex-direction: column-reverse; /* Menu navigasi naik ke atas di mobile */
+    align-items: flex-start;
+    gap: 1.5rem;
   }
-
+  
+  .footer__left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
   .footer__links {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    gap: 1.25rem;
   }
 }

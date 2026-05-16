@@ -9,7 +9,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Integrasi simulasi transmit data form
     setTimeout(() => {
       alert('Message transmitted successfully!')
@@ -21,12 +21,12 @@ export default function Contact() {
   return (
     <section className="contact section section--surface" id="contact">
       <div className="contact-grid container">
-        
+
         {/* Sisi Kiri: Industrial Labeling Info Panel */}
         <div className="contact-info">
-          <SectionHeader 
-            eyebrow="— CONNECTION —" 
-            title={'Let’s Build\nSomething.'} 
+          <SectionHeader
+            eyebrow="— CONNECTION —"
+            title={'Let’s Build\nSomething.'}
           />
           <p className="contact-description">
             Ready to collaborate on mission-critical enterprise systems, robust API development, or full-stack operational frameworks? Let's talk.
@@ -92,14 +92,14 @@ export default function Contact() {
                 id="message"
                 required
                 rows="5"
-                placeholder="Tell me about your project..."
+                placeholder="Inquire about backend development roles, project specifications, or technical discussions..."
                 value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
               />
             </div>
 
             <button type="submit" className="submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'TRANSMITTING...' : 'SEND MESSAGE'} 
+              {isSubmitting ? 'TRANSMITTING...' : 'SEND MESSAGE'}
               <span aria-hidden="true" style={{ marginLeft: '0.5rem' }}>-&gt;</span>
             </button>
           </form>
