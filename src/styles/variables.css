@@ -1,0 +1,24 @@
+:root {
+  --bg-base: #070b12;
+  --bg-surface: #0d1422;
+  --bg-elevated: #111927;
+  --border: rgba(99, 179, 237, 0.12);
+  --border-glow: rgba(99, 179, 237, 0.35);
+  --accent: #63b3ed;
+  --accent-vivid: #90cdf4;
+  --accent-muted: #2c5282;
+  --gold: #f6ad55;
+  --green: #68d391;
+  --red: #fc8181;
+  --text-primary: #e2e8f0;
+  --text-muted: #718096;
+  --text-dim: #4a5568;
+  --font-display: 'Clash Display', 'Outfit', sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-card: 14px;
+  --radius-badge: 6px;
+  --radius-pill: 999px;
+  --shadow-glow: 0 0 42px rgba(99, 179, 237, 0.16);
+  --page: 1100px;
+}
