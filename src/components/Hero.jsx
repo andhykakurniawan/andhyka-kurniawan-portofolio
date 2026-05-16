@@ -28,7 +28,7 @@ export default function Hero() {
           <p className="hero__subtitle animate-fade-up delay-800">
             Experienced in enterprise transactional systems, RESTful API
             development, and backend application architecture using COBOL,
-            DB2, Spring Boot, and modern web technologies in production
+            IBM MAINFRAME, Spring Boot, and modern web technologies in production
             banking environments.
           </p>
 

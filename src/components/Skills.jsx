@@ -8,44 +8,57 @@ export default function Skills() {
   return (
     <section className="skills section" id="skills">
       <div className="container">
-        <SectionHeader eyebrow="— 02 / TECHNICAL SKILLS" title="My Tech Stack" />
+        <SectionHeader eyebrow="— SKILLS —" title="Technical Capabilities" />
 
-        <div className="skill-grid">
-          {skillGroups.map((group, index) => (
-            <article
-              className={`skill-card interactive skill-card--${group.accent} reveal-card`}
-              style={{ transitionDelay: `${index * 80}ms` }}
-              key={group.title}
-            >
-              <div className="skill-card__head">
-                <span className="skill-card__icon">{group.icon}</span>
-                {group.badge && <span className="rare-badge">{group.badge}</span>}
-              </div>
-              <h3>{group.title}</h3>
-              {group.caption && <p className="skill-card__caption">{group.caption}</p>}
-              <div className="tag-list">
-                {group.skills.map((skill) => (
-                  <span className="tag" key={skill}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div ref={ref} className={`skill-bars ${visible ? 'is-visible' : ''}`}>
-          {skillBars.map((skill) => (
-            <div className="skill-bar" key={skill.label}>
-              <div className="skill-bar__meta">
-                <span>{skill.label}</span>
-                <span>{skill.value}%</span>
-              </div>
-              <div className="skill-bar__track">
-                <span style={{ width: visible ? `${skill.value}%` : '0%' }} />
-              </div>
+        <div className="skills-grid">
+          <div className="skills-card premium-tier">
+            <div className="skills-card-header">
+              <span className="tier-badge">RARE CORE SYSTEM</span>
+              <h3>Enterprise & Mainframe</h3>
             </div>
-          ))}
+            <p>Operating high-availability banking infrastructure under strict production SLA environments.</p>
+            <div className="skills-tags">
+              <span>COBOL</span>
+              <span>IBM Mainframe</span>
+              <span>VSAM</span>
+              <span>Credit Card Processing</span>
+              <span>Incident Handling</span>
+            </div>
+          </div>
+
+          <div className="skills-card">
+            <h3>Core Backend & API</h3>
+            <p>Building secure, scalable, and thread-safe systems using modern service-repository architectures.</p>
+            <div className="skills-tags">
+              <span>Java (Spring Boot)</span>
+              <span>PHP (CodeIgniter 3 & 4)</span>
+              <span>RESTful API Design</span>
+              <span>JWT Authentication</span>
+            </div>
+          </div>
+
+          <div className="skills-card">
+            <h3>Databases & Storage</h3>
+            <p>Designing structured relational schemas and optimizing transactional data synchronization.</p>
+            <div className="skills-tags">
+              <span>MySQL</span>
+              <span>IBM MAINFRAME</span>
+              <span>PostgreSQL</span>
+              <span>Relational Schema Design</span>
+            </div>
+          </div>
+
+          <div className="skills-card">
+            <h3>Frontend Engineering</h3>
+            <p>Crafting role-specific administrative dashboard layouts and interactive real-time state interfaces.</p>
+            <div className="skills-tags">
+              <span>React.js</span>
+              <span>Vite</span>
+              <span>Tailwind CSS</span>
+              <span>JavaScript (ES6+)</span>
+              <span>Responsive UI Design</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

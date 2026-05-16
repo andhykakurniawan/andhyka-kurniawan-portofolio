@@ -35,7 +35,7 @@ export default function Projects() {
     <>
       <section className="projects section section--surface section--grid" id="projects">
         <div className="container">
-          <SectionHeader eyebrow="- PROJECTS -" title="Project Experience" />
+          <SectionHeader eyebrow="— PROJECTS —" title="Project Experience" />
 
           <div className="project-list">
             {projects.map((project, index) => (
