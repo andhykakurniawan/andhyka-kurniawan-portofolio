@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <section className="projects section section--surface section--grid" id="projects">
       <div className="container">
-        <SectionHeader eyebrow="— 03 / PROJECTS" title="Selected Work" />
+        <SectionHeader eyebrow="- 03 / PROJECTS" title="Selected Work" />
 
         <div className="project-list">
           {projects.map((project, index) => (
